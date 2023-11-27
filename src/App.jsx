@@ -1,32 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Footer from './Components/Footer';
-import Navbar from './Components/Navbar';
-import Home from './Routes/Home';
-import Detail from './Routes/Detail';
-import Contact from './Routes/Contact';
-import Favs from './Routes/Favs';
-import { ContextProvider } from './Components/utils/global.context'; // Asegúrate de importar tu contexto
-import './App.css';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Footer from "./Components/Footer";
+import Navbar from "./Components/Navbar";
+import Home from "./Routes/Home";
+import Detail from "./Routes/Detail";
+import Contact from "./Routes/Contact";
+import Favs from "./Routes/Favs";
 
 function App() {
+  console.log('Rendering App...');
   return (
-    <ContextProvider>
-      <Router>
-        <div className="App">
-          <Navbar />
+    <div className="App">
+      
+      <Navbar />
+      
+      <Routes>
+        <Route path="/home" element={<Home />} />
+        <Route path="/dentist/:id" element={<Detail />} />
+        <Route path="/contacto" element={<Contact />} />
+        <Route path="/favs" element={<Favs />} />
+      </Routes>
 
-          <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/dentist/:id" component={Detail} />
-            <Route path="/contacto" component={Contact} />
-            <Route path="/favs" component={Favs} />
-          </Switch>
-
-          <Footer />
-        </div>
-      </Router>
-    </ContextProvider>
+      <Footer />
+    </div>
   );
 }
 

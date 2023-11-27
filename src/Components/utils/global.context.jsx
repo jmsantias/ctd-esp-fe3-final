@@ -1,9 +1,9 @@
 import React, { createContext, useReducer } from "react";
 
 export const initialState = {
-  theme: "light", // Puedes establecer un tema predeterminado
-  data: [], // Datos iniciales vacíos
-  favorites: [], // Para almacenar dentistas favoritos
+  theme: "light", 
+  data: [], 
+  favorites: [], 
 };
 
 export const AppContext = createContext();
@@ -16,7 +16,6 @@ const reducer = (state, action) => {
       return { ...state, data: action.payload };
     case "ADD_FAV":
       return { ...state, favorites: [...state.favorites, action.payload] };
-    // Puedes agregar más casos según tus necesidades
     default:
       return state;
   }
@@ -24,6 +23,8 @@ const reducer = (state, action) => {
 
 export const ContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  console.log('Global Context State:', state);
 
   const contextValue = {
     state,

@@ -6,7 +6,7 @@ const Favs = () => {
   const { state } = useContext(AppContext);
 
   return (
-    <div className={state.theme === 'dark' ? 'dark-theme' : 'light-theme'}>
+    <div className={state.theme === 'dark' ? 'dark' : 'light'}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {state.favorites.length > 0 ? (

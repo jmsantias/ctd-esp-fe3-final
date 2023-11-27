@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { AppContext } from "../Components/utils/global.context"; // Asegúrate de importar tu contexto
+import { AppContext } from "../Components/utils/global.context";
 
 const Form = () => {
   const [formData, setFormData] = useState({

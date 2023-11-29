@@ -1,35 +1,39 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { AppContext } from './utils/global.context';
+import { AppContext } from '../Components/utils/global.context';
 
 const Navbar = () => {
-  const { theme, dispatch } = useContext(AppContext);
+  const { state, dispatch } = useContext(AppContext);
 
   const changeTheme = () => {
     console.log('Changing theme...');
     dispatch({ type:'TOGGLE_THEME'});
   };
 
-  console.log('Theme:', theme);
+  console.log('Theme:', state.theme);
 
   return (
-    <nav className={`nav ${theme === 'dark' ? 'dark-theme' : 'light-theme'}`}>
+
+    <nav className={`nav ${state.theme ? 'light' : 'dark'}`}>
       <div className="logo-container">
-        <div className={`logo ${theme === 'dark' ? 'dark' : 'light'}`}>DH Odontologos</div>
+        <div className={`logo ${state.theme ? 'light' : 'dark'}`}>DH Odonto</div>
       </div>
       <ul>
         <li>
           <Link to="/home">Home</Link>
         </li>
         <li>
-          <Link to="/contacto">Contacto</Link>
+          <Link to="/contacto">Contact</Link>
         </li>
         <li>
-          <Link to="/favs">Favoritos</Link>
+          <Link to="/favs">Favorites</Link>
+        </li>
+        <li>
+        <button onClick={changeTheme}>🌙</button>
         </li>
       </ul>
-      <button onClick={changeTheme}>Change theme</button>
     </nav>
+
   );
 };
 

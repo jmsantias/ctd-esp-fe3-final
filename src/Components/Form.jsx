@@ -8,6 +8,7 @@ const Form = () => {
   });
 
   const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
   const { dispatch } = useContext(AppContext);
 
   const handleChange = (e) => {
@@ -19,14 +20,14 @@ const Form = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Validaciones básicas
+  
     if (formData.fullName.length < 6 || !formData.email.includes("@")) {
       setError("Por favor, verifica tu información nuevamente.");
+      setSuccessMessage(null);
     } else {
-      // Aquí podrías enviar los datos al servidor o realizar otras acciones necesarias
       dispatch({ type: "SUBMIT_FORM", payload: formData });
       setError(null);
+      setSuccessMessage("Thanks, we will contact you soon.");
       setFormData({
         fullName: "",
         email: "",
@@ -38,7 +39,7 @@ const Form = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          Nombre Completo:
+          Name:
           <input
             type="text"
             name="fullName"
@@ -57,10 +58,10 @@ const Form = () => {
           />
         </label>
         <br />
-        <button type="submit">Enviar</button>
+        <button type="submit">Submit</button>
       </form>
-
-      {error && <p>{error}</p>}
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
     </div>
   );
 };

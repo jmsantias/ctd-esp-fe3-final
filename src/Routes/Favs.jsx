@@ -4,13 +4,14 @@ import Card from "../Components/Card";
 
 const Favs = () => {
   const { state } = useContext(AppContext);
+  const { favorites } = state;
 
   return (
-    <div className={state.theme === 'dark' ? 'dark' : 'light'}>
+    <div className={state.theme ? 'light' : 'dark'}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
-        {state.favorites.length > 0 ? (
-          state.favorites.map((dentist) => (
+        {favorites.length > 0 ? (
+          favorites.map((dentist) => (
             <Card
               key={dentist.id}
               id={dentist.id}
@@ -19,7 +20,7 @@ const Favs = () => {
             />
           ))
         ) : (
-          <p>No hay dentistas destacados.</p>
+          <p>There are no favorite dentists.</p>
         )}
       </div>
     </div>

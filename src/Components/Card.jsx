@@ -11,11 +11,15 @@ const Card = ({ name, username, id }) => {
   const addFav = () => {
     dispatch({ type: "ADD_FAV", payload: { id, name, username } });
     setIsFav(true);
+    const newFavorites = [...favorites, { id, name, username }];
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
   const removeFav = () => {
     dispatch({ type: "REMOVE_FAV", payload: id });
     setIsFav(false);
+    const newFavorites = favorites.filter((fav) => fav.id !== id);
+    localStorage.setItem("favorites", JSON.stringify(newFavorites));
   };
 
   return (
@@ -29,7 +33,7 @@ const Card = ({ name, username, id }) => {
       <p>{username}</p>
       <p>ID: {id}</p>
 
-      <Link to={`/dentist/${id}`}>Ver Detalles</Link>
+      <Link to={`/dentist/${id}`}>View Details</Link>
 
       {isFav ? (
         <button onClick={removeFav} className="favButton">
@@ -37,7 +41,7 @@ const Card = ({ name, username, id }) => {
         </button>
       ) : (
         <button onClick={addFav} className="favButton">
-          Add fav
+          ⭐️
         </button>
       )}
     </div>

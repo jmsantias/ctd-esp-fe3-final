@@ -23,7 +23,7 @@ const Home = () => {
   }, [dispatch]);
 
   return (
-    <main className={state.theme === "dark" ? "dark" : "light"}>
+    <main className={state.theme ? "light" : "dark"}>
       <h1>Home</h1>
       <div className="card-grid">
         {state.data.length > 0 ? (
@@ -36,7 +36,7 @@ const Home = () => {
             />
           ))
         ) : (
-          <p>No hay dentistas disponibles.</p>
+          <p>There are no dentists available.</p>
         )}
       </div>
     </main>

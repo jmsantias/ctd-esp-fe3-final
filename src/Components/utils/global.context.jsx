@@ -1,7 +1,7 @@
 import React, { createContext, useReducer } from "react";
 
 export const initialState = {
-  theme: "light", 
+  theme: true, 
   data: [], 
   favorites: [], 
 };
@@ -11,11 +11,13 @@ export const AppContext = createContext();
 const reducer = (state, action) => {
   switch (action.type) {
     case "TOGGLE_THEME":
-      return { ...state, theme: state.theme === "light" ? "dark" : "light" };
+      return { ...state, theme: !state.theme };
     case "SET_DATA":
       return { ...state, data: action.payload };
     case "ADD_FAV":
       return { ...state, favorites: [...state.favorites, action.payload] };
+    case "REMOVE_FAV":
+      return { ...state, favorites: state.favorites.filter(fav => fav.id !== action.payload) };
     default:
       return state;
   }

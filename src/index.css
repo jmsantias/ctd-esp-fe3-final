@@ -1,3 +1,4 @@
+/* Estilos para el cuerpo de la página */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,12 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
   padding: 10px;
   border: none;
   width: 100%;
   cursor: pointer;
+  border-radius: 10px; 
 }
 
 h1{
@@ -45,6 +48,7 @@ a{
   margin: 5px;
   cursor: pointer;
 }
+
 a:hover{
   color: rgb(136, 136, 136);
 } 
@@ -73,7 +77,7 @@ a:hover{
 }
 
 .logo img {
-width: 50%;
+  width: 50%;
 }
 
 form{
@@ -94,6 +98,9 @@ form{
   width: 200px;
   padding: 0.5rem 0.5rem 0 0.5rem;
   border: 0.5px solid rgb(136, 136, 136);
+  border-radius: 10px; 
+  background-color: #e6f7ff;
+  color: #3799c7;
 }
 
 .card:hover{
@@ -110,12 +117,11 @@ form{
 }
 
 table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  border: 1px solid #ccc;
 }
 
 td, th {
@@ -128,10 +134,36 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-.dark{
+/* Estilos para el modo oscuro */
+.dark {
   background-color: #12121296;
-  color: white;
+ 
 }
-.dark > a {
-  color: white;
+
+.dark a {
+  color: #000 ;
+}
+
+.dark .favButton {
+  background-color: #71c0e4; 
+  color: black; 
+}
+
+.dark .card h2 {
+  color: #000 !important; 
+}
+
+.dark nav, .dark .footer {
+  background-color: #0000006c;
+}
+.dark nav a, .dark nav button {
+  color: #000 ; 
+}
+
+.dark .home h1 {
+  color: #3799c7; /* Color celeste pastel en el modo oscuro */
+}
+.texto-negrita {
+  font-weight: bold;
+  color: #3799c7;
 }

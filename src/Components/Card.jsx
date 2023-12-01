@@ -33,7 +33,8 @@ const Card = ({ name, username, id }) => {
       <p>{username}</p>
       <p>ID: {id}</p>
 
-      <Link to={`/dentist/${id}`}>View Details</Link>
+      <Link to={`/dentist/${id}`} className="texto-negrita">View Details</Link>
+
 
       {isFav ? (
         <button onClick={removeFav} className="favButton">

@@ -1,11 +1,25 @@
-/* Estilos para el cuerpo de la página */
 body {
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+main {
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-bottom: 50px;
 }
 
 code {
@@ -28,9 +42,14 @@ h1{
 
 nav{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   padding: 1rem;
+  background-color: #e6f7ff;
+}
+
+.fav {
+  margin-bottom: 550px;
 }
 
 ul {
@@ -55,8 +74,9 @@ a:hover{
 
 .footer {
   display: flex;
-  align-items: end;
-  padding: 2rem;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #e6f7ff;
 }
 
 .footer-icons {
@@ -68,8 +88,6 @@ a:hover{
 .footer-icons img {
   width: 25px;
   height: 25px;
-  background-color: #000;
-  border-radius: 20%;
 }
 
 .logo {
@@ -84,10 +102,15 @@ form{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  align-items: start;
+  align-items: center;
   width: 300px;
   height: 100px;
   margin: 0 auto;
+  margin-bottom: 380px;
+}
+
+.contact {
+  margin-top: 100px;
 }
 
 .card{
@@ -137,7 +160,6 @@ tr:nth-child(even) {
 /* Estilos para el modo oscuro */
 .dark {
   background-color: #12121296;
- 
 }
 
 .dark a {
@@ -153,11 +175,8 @@ tr:nth-child(even) {
   color: #000 !important; 
 }
 
-.dark nav, .dark .footer {
-  background-color: #0000006c;
-}
 .dark nav a, .dark nav button {
-  color: #000 ; 
+  color: white ; 
 }
 
 .dark .home h1 {
@@ -166,4 +185,12 @@ tr:nth-child(even) {
 .texto-negrita {
   font-weight: bold;
   color: #3799c7;
+}
+
+.dark .titulo {
+  color: white;
+}
+
+.dark .contact {
+  color: white;
 }

@@ -7,7 +7,7 @@ const Favs = () => {
   const { favorites } = state;
 
   return (
-    <div className={state.theme ? 'light' : 'dark'}>
+    <div className={`fav ${state.theme ? 'light' : 'dark'}`}>
       <h1>Dentists Favs</h1>
       <div className="card-grid">
         {favorites.length > 0 ? (

@@ -16,7 +16,7 @@ const Navbar = () => {
 
     <nav className={`nav ${state.theme ? 'light' : 'dark'}`}>
       <div className="logo-container">
-        <div className={`logo ${state.theme ? 'light' : 'dark'}`}>DH Odonto</div>
+        <div className={`titulo ${state.theme ? 'light' : 'dark'}`}>DH Odonto</div>
       </div>
       <ul>
         <li>

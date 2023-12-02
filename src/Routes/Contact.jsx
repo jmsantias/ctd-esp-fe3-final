@@ -6,7 +6,7 @@ const Contact = () => {
   const { state } = useContext(AppContext);
 
   return (
-    <div className={state.theme === 'dark' ? 'dark' : 'light'}>
+    <div className={`contact ${state.theme ? 'light' : 'dark'}`}>
       <h2>Want to know more?</h2>
       <p>Send us your questions and we will contact you</p>
       <Form />

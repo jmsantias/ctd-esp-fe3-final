@@ -22,7 +22,7 @@ const Detail = () => {
   }, [id]);
 
   return (
-    <div className={state.theme === 'dark' ? 'dark' : 'light'}>
+    <div className={state.theme ? 'light' : 'dark'}>
       <h1>Detail Dentist id {id}</h1>
 
       {dentist && (
